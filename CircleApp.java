@@ -20,8 +20,8 @@ while(choice.equalsIgnoreCase("y")){
 			System.out.println("Enter radius");
 			double radius = sc.nextDouble();
 			Circle circle1 = new Circle(radius);
-			circle1.getArea();
-			circle1.getCircumference();
+			Circle.getArea();
+			Circle.getCircumference();
 			System.out.println("Circumference is :" + circle1.getFormattedCircumference());
 			System.out.println("Area is :" + circle1.getFormattedArea());
             System.out.println("you created " +Circle.getObjectCount());
@@ -36,6 +36,7 @@ while(choice.equalsIgnoreCase("y")){
         
 
 }
+System.out.println("Good Bye");
       sc.close();    
 	}
 
