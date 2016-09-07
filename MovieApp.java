@@ -35,7 +35,7 @@ Movie m=new Movie(null,null);
 		
 		System.out.println("What category you are interested");
 		String categoryChoice = sc.next();
-		if (!categoryChoice.equalsIgnoreCase("scifi") ||!categoryChoice.equalsIgnoreCase("comedy") || !categoryChoice.equalsIgnoreCase("horror")|| !categoryChoice.equalsIgnoreCase("action")){
+		if (!categoryChoice.equalsIgnoreCase("scifi")&!categoryChoice.equalsIgnoreCase("comedy")& !categoryChoice.equalsIgnoreCase("horror")& !categoryChoice.equalsIgnoreCase("action")){
 			throw new IllegalArgumentException("Enter a valid input :(Scifi,comedy,horror,action)");
 			
 		}else
