@@ -30,6 +30,12 @@ public class Movie {
 	public String getCategory(){
 		return category;
 	}
+    
+	@Override
+	public String toString(){
+	return title;
+	
+}
 
 	
 
