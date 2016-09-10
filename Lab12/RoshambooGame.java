@@ -14,90 +14,97 @@ public class RoshambooGame {
 
 		String player = sc.next();
 		user = new ScannerPlayer(player);
-		String playAgain = "";
+		String playAgain = "yes";
 		int win = 1;
 		int tie = 1;
 		int lost = 1;
 
 		do {
-			System.out.println("Would you like to play against Random/Rock");
-			String userChoice = sc.next();
+			try {
 
-			switch (userChoice.toLowerCase()) {
+				System.out.println("Would you like to play against Random/Rock");
+				String userChoice = sc.next();
 
-			case "random":
-				opponent = new RandomPlayer(userChoice);
+				switch (userChoice.toLowerCase()) {
 
-				break;
-			case "rock":
-				opponent = new RockPlayer(userChoice);
+				case "random":
+					opponent = new RandomPlayer(userChoice);
 
-				break;
-			default:
-				throw new IllegalArgumentException();
-
-			}
-
-			switch (user.generateRoshambo()) {
-			case ROCK:
-
-				switch (opponent.generateRoshambo()) {
-				case ROCK:
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " ROCK");
-					System.out.println(player.toUpperCase() + "  Tie! " + tie++);
 					break;
-				case PAPER:
+				case "rock":
+					opponent = new RockPlayer(userChoice);
 
-					System.out.println(player.toUpperCase() + "\t" + "PICK" + "::" + "ROCK");
-					System.out.println(player.toUpperCase() + "  Lost! " + lost++);
 					break;
-				case SCISSORS:
-					System.out.println(player.toUpperCase() + "\t" + "PICK" + "::" + "ROCK");
-					System.out.println(player.toUpperCase() + "  Wins! " + win++);
-					break;
+				default:
+					throw new IllegalArgumentException("Enter a valid input");
+
 				}
 
-				break;
-			case PAPER:
-				switch (opponent.generateRoshambo()) {
+				switch (user.generateRoshambo()) {
 				case ROCK:
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-					System.out.println(player.toUpperCase() + "  Wins! " + win++);
+
+					switch (opponent.generateRoshambo()) {
+					case ROCK:
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " ROCK");
+						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						break;
+					case PAPER:
+
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
+						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						break;
+					case SCISSORS:
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
+						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						break;
+					}
+
 					break;
 				case PAPER:
+					switch (opponent.generateRoshambo()) {
 
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-					System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+					case ROCK:
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						break;
+					case PAPER:
+
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						break;
+					case SCISSORS:
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						break;
+					}
+
 					break;
 				case SCISSORS:
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-					System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+					switch (opponent.generateRoshambo()) {
+					case ROCK:
+						System.out.println(player.toUpperCase() + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						break;
+					case PAPER:
+
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						break;
+					case SCISSORS:
+						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						break;
+					}
+
 					break;
+
+				default:
+					throw new NullPointerException("enter valid input");
+
 				}
 
-				break;
-			case SCISSORS:
-				switch (opponent.generateRoshambo()) {
-				case ROCK:
-					System.out.println(player.toUpperCase() + "\t" + "PICK" + "::" + " SCISSORS");
-					System.out.println(player.toUpperCase() + "  Lost! " + lost++);
-					break;
-				case PAPER:
-
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
-					System.out.println(player.toUpperCase() + "  Wins! " + win++);
-					break;
-				case SCISSORS:
-					System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
-					System.out.println(player.toUpperCase() + "  Tie! " + tie++);
-					break;
-				}
-
-				break;
-
-			default:
-				break;
-
+			} catch (NullPointerException | IllegalArgumentException ex) {
+				System.out.println("enter valid output");
 			}
 
 			System.out.println("play again?(y/n)");
@@ -113,6 +120,9 @@ public class RoshambooGame {
 
 		System.out.println("Good Bye");
 
+		System.out.println("play again?(y/n)");
+		playAgain = sc.next();
+		sc.close();
 	}
 
 }
