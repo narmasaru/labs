@@ -104,7 +104,7 @@ public class RoshambooGame {
 				}
 
 			} catch (NullPointerException | IllegalArgumentException ex) {
-				System.out.println("enter valid output");
+				System.out.println("Enter Valid Input");
 			}
 
 			System.out.println("play again?(y/n)");

@@ -3,7 +3,7 @@ package Lab12;
 public class Player {
 
 	private String playerName;
-	private String userInput;
+	
 
 	public Player(String playerName) {
 		this.playerName = playerName;
