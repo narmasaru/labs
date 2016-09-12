@@ -7,8 +7,8 @@ public class RoshambooGame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		Player opponent; // declaring an object for the base class player.its
-							// not iniated here.
+		Player opponent; // declaring an object for the base class player.its not iniated yet
+							
 		Player user;
 		System.out.println("Welcome to Rock Paper Scissors!");
 		System.out.println("Enter your Name");
@@ -23,17 +23,8 @@ public class RoshambooGame {
 		do {
 			try {
 
-				System.out.println("Would you like to play against Random/Rock"); // based
-																					// on
-																					// the
-																					// userchoice
-																					// it
-																					// will
-																					// select
-																					// either
-																					// random
-																					// or
-																					// rock
+				System.out.println("Would you like to play against Random/Rock"); // base on the userchoice it selects random or rock
+				
 				String userChoice = sc.next();
 
 				switch (userChoice.toLowerCase()) {
