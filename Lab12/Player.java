@@ -2,7 +2,9 @@ package Lab12;
 
 public class Player {
 
-	private String playerName;
+	private String playerName;           //Player base class,and attribute player is defined as private
+	
+	
 	
 
 	public Player(String playerName) {

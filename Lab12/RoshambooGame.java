@@ -7,7 +7,7 @@ public class RoshambooGame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		Player opponent;
+		Player opponent;   //declaring an object for the base class player.its not iniated here.
 		Player user;
 		System.out.println("Welcome to Rock Paper Scissors!");
 		System.out.println("Enter your Name");
@@ -22,13 +22,13 @@ public class RoshambooGame {
 		do {
 			try {
 
-				System.out.println("Would you like to play against Random/Rock");
+				System.out.println("Would you like to play against Random/Rock"); //based on the userchoice it will select either random or rock 
 				String userChoice = sc.next();
 
 				switch (userChoice.toLowerCase()) {
 
 				case "random":
-					opponent = new RandomPlayer(userChoice);
+					opponent = new RandomPlayer(userChoice);         
 
 					break;
 				case "rock":
@@ -40,22 +40,22 @@ public class RoshambooGame {
 
 				}
 
-				switch (user.generateRoshambo()) {
+				switch (user.generateRoshambo()) {                          
 				case ROCK:
 
 					switch (opponent.generateRoshambo()) {
 					case ROCK:
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " ROCK");
-						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + " ROCK");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Tie! " + tie++);
 						break;
 					case PAPER:
 
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
-						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
+						System.out.println(user.getPlayerName()  + "  Lost! " + lost++);
 						break;
 					case SCISSORS:
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
-						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + "ROCK");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Wins! " + win++);
 						break;
 					}
 
@@ -64,17 +64,17 @@ public class RoshambooGame {
 					switch (opponent.generateRoshambo()) {
 
 					case ROCK:
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						System.out.println(user.getPlayerName().toUpperCase()+ "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(user.getPlayerName().toUpperCase() + "  Wins! " + win++);
 						break;
 					case PAPER:
 
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Tie! " + tie++);
 						break;
 					case SCISSORS:
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " PAPER");
-						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						System.out.println(user.getPlayerName().toUpperCase()+ "'s" + "\t" + "PICK" + "::" + " PAPER");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Lost! " + lost++);
 						break;
 					}
 
@@ -82,17 +82,17 @@ public class RoshambooGame {
 				case SCISSORS:
 					switch (opponent.generateRoshambo()) {
 					case ROCK:
-						System.out.println(player.toUpperCase() + "\t" + "PICK" + "::" + " SCISSORS");
-						System.out.println(player.toUpperCase() + "  Lost! " + lost++);
+						System.out.println(user.getPlayerName().toUpperCase() + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Lost! " + lost++);
 						break;
 					case PAPER:
 
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
-						System.out.println(player.toUpperCase() + "  Wins! " + win++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Wins! " + win++);
 						break;
 					case SCISSORS:
-						System.out.println(player.toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
-						System.out.println(player.toUpperCase() + "  Tie! " + tie++);
+						System.out.println(user.getPlayerName().toUpperCase() + "'s" + "\t" + "PICK" + "::" + " SCISSORS");
+						System.out.println(user.getPlayerName().toUpperCase()  + "  Tie! " + tie++);
 						break;
 					}
 
@@ -119,9 +119,10 @@ public class RoshambooGame {
 		System.out.println("Total Tie : " + (tie - 1));
 
 		System.out.println("Good Bye");
-
 		System.out.println("play again?(y/n)");
+
 		playAgain = sc.next();
+
 		sc.close();
 	}
 

@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomPlayer extends Player {
 
 	public RandomPlayer(String playerName) {
-		super(playerName);
+		super(playerName);   
 
 	}
 
