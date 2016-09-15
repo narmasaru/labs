@@ -11,20 +11,40 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Responsible for reading and writing Country List to a file.
+ */
 public class CountriesTextFile {
 
+	/**
+	 * The path of the file where countries are stored.
+	 */
 	private Path filePath;
 	
-
+	/**
+	 * Constructor that lets you choose a file path.
+	 * 
+	 * @param filePathString path of the file where countries are stored.
+	 */
 	public CountriesTextFile(String filePathString) {
 		this.filePath = Paths.get(filePathString);
 	}
 
+	
+	/**
+	 * Constructor that uses the default file path to store countries.
+	 */
 	public CountriesTextFile() {
 		this("C:/Users/User/workspace/Labs/src/countries.txt");
 	}
 
+
+	/**
+	 * Read the file and returns all the countries listed in the file.
+	 * 
+	 * @return A List of tcountries. If not file exists, it returns an empty list.
+	 * @throws RuntimeException if something goes wrong while accessing the file.
+	 */
 	public List<String> readCountryList() {
 
 		List<String> countries = new ArrayList<>();
@@ -50,7 +70,12 @@ public class CountriesTextFile {
 			throw new RuntimeException("unable to read the country list", ex);
 		}
 	}
-
+	/**
+	 * Writes a list of countries to the file.
+	 * 
+	 * @param country The list of countries to write.
+	 * @throws RuntimeException if something goes wrong while accessing the file
+	 */
 	public void writeCountryList(List<String> country) {
 	
 		
@@ -71,6 +96,8 @@ public class CountriesTextFile {
 
 			writer.close();
 		} catch (IOException ex) {
+			// IOException is a checked exception (I have to handle it)
+						// RuntimeException is an unchecked exception (I don't have to handle it)
            throw new RuntimeException("unable to write country list");
 		}
        
