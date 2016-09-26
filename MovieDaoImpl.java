@@ -65,7 +65,7 @@ private Set<String> catagorySet;
 		for (Movie m : movies) {
 			if (catagory.add(m.getCategory())) {
 				result.add(m);
-				System.out.println(m.getCategory());
+				
 			}
 		}
 		return catagory;
