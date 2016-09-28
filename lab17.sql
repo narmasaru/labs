@@ -73,8 +73,10 @@ select  first_name from employees
 where notes is null;
 
 --#16 get shipcity for all orders for which customer firstname is fransisco
-select ship_city from orders
- where ship_name like 'francisco%';
+Select orders.ship_city 
+From Orders  inner join customers 
+On orders.customer_id =customers.id 
+Where  customers.first_name ='Francisco';
 
 
 
