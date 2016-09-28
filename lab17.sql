@@ -41,7 +41,8 @@ SELECT AVG(quantity),MIN(quantity),MAX(quantity) FROM order_details;
 
 --#12 calculate avg,min,nax of quantity at order table grouped by orderid
 
-SELECT AVG(quantity),MIN(quantity),MAX(quantity) AS order_id  FROM order_details;
+SELECT AVG(quantity),MIN(quantity),MAX(quantity)  FROM order_details group by order_id;
+
 
 --#13 find customer id that placed order id 65
 SELECT customer_id
