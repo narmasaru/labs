@@ -46,7 +46,7 @@
 		</div>
 		<div>
 			<div>
-				<input type="checkbox" name="blackAndWhite" value="true" checked /><span>B&W</span>
+				<input type="checkbox" name="blackandwhite" value="true" checked /><span>B&W</span>
 			 </div>
 			<div>
 				<input type="radio" name="origin" value="Hollywood">

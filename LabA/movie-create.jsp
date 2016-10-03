@@ -46,7 +46,7 @@
 			</select>
 		</div>
 		<div>
-				<input type="checkbox" name="blackAndWhite" value="" checked /><span>B&W</span>
+				<input type="checkbox" name="blackandwhite" value="" checked /><span>B&W</span>
 			 </div>
 		<div>
 			<input type="radio" name="origin" value="Hollywood">

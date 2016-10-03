@@ -37,7 +37,7 @@
 				
                    <td>
                    <c:if test="${movie.blackandwhite=='true'}">
-                      <input type="checkbox" name="blackAndWhite" checked/>
+                      <input type="checkbox" name="blackandwhite" checked/>
                   </c:if>
                    </td>
                    
